@@ -1,4 +1,4 @@
-package chapter1;
+package chapter3;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

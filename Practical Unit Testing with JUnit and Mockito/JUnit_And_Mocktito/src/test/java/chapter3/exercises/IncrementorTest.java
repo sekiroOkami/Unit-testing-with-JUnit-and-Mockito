@@ -1,4 +1,4 @@
-package chapter1.exercises;
+package chapter3.exercises;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class IncrementorTest {
     private Incrementor incrementor = null;
