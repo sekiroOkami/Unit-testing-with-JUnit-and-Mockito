@@ -1,4 +1,4 @@
-package chapter1;
+package chapter3;
 
 public record Money(int amount, String currency) {
     public Money{

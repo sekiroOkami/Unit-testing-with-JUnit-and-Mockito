@@ -1,4 +1,4 @@
-package chapter1.exercises;
+package chapter3.exercises;
 
 public class Incrementor {
     public static int counter = 0;
