@@ -6,7 +6,7 @@ public record FootBallTeam(int gameWon) implements Comparable<FootBallTeam> {
     }
 
     @Override
-    public int compareTo(FootBallTeam o) {
-        return 0;
+    public int compareTo(FootBallTeam otherTeam) {
+        return Integer.compare(gameWon, otherTeam.gameWon);
     }
 }
