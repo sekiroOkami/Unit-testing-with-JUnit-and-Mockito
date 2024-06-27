@@ -1,8 +1,9 @@
-package mockito.part3.model.service;
+package mockito.part4.model.service;
 
-import mockito.part3.model.Person;
-import mockito.part3.model.PersonRepository;
+import mockito.part4.model.service.Person;
+import mockito.part4.model.service.PersonRepository;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -36,11 +37,22 @@ public class PersonService {
                 .forEach(personRepository::delete);
     }
 
-    public Integer getMaxId() {
-        return personRepository.findAll()
-                .stream()
+    public Integer findMaxId() {
+        return personRepository.findAll().stream()
                 .map(Person::id)
                 .max(Integer::compareTo)
                 .orElse(0);
+    }
+
+    public Person createPerson(int id, String first, String last, LocalDate dob) {
+        var person = new Person(id, first, last, dob);
+        return personRepository.save(person);
+    }
+
+    public List<Integer> savePeople(Person... persons) {
+        return Arrays.stream(persons)
+                .map(personRepository::save)
+                .map(Person::id)
+                .collect(Collectors.toList());
     }
 }
