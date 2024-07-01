@@ -1,7 +1,8 @@
-package mockito.part4.model.service;
+package mockito.part5.model.service;
 
-import java.time.LocalDate;
-import java.time.Month;
+import mockito.part5.model.service.Person;
+import mockito.part5.model.service.PersonRepository;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,7 +30,7 @@ public class InMemoryPersonRepository implements PersonRepository {
     }
 
     @Override
-    public Person save(Person person) {
+    public final Person save(Person person) {
         synchronized (people) {
             people.add(person);
         }
@@ -47,7 +48,7 @@ public class InMemoryPersonRepository implements PersonRepository {
     }
 
     @Override
-    public void delete(Person person) {
+    public final void delete(Person person) {
         synchronized (people) {
             people.remove(person);
         }

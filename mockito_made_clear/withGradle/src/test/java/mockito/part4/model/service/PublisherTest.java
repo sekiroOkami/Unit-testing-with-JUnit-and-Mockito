@@ -1,4 +1,4 @@
-package mockito.part4.model.service.service;
+package mockito.part4.model.service;
 
 import mockito.part4.model.pubsub.Publisher;
 import mockito.part4.model.pubsub.Subscriber;
